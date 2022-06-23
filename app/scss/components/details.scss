@@ -1,0 +1,58 @@
+@use '../base' as *;
+@use '../util/' as *;
+
+.card-report__popup {
+    position: absolute;
+    top: 80%;
+    left: 26%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: rem(10);
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    margin: 0;
+    padding-inline: 1rem;
+
+    .popup__number {
+        font-size: 2.5rem;
+        font-weight: $f-bold;
+
+        color: black;
+        
+        margin-bottom: rem(5);
+    }
+
+    .popup__text {
+        font-size: rem(12);
+        font-weight: $f-bold;
+
+        text-transform: uppercase;
+
+        color: clr(neutral, grayish-blue);
+    }
+}
+
+@include breakpoint(medium) {
+    .card-report__popup {
+        top: -26%;
+        left: 62%;
+    }
+
+    .popup__tail {
+        position: absolute;
+        right: 0;
+        bottom: -22%;
+
+        width: rem(24);
+        height: rem(24);
+
+        background-color: white;
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+}

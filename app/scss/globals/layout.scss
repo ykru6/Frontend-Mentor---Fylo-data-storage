@@ -1,0 +1,77 @@
+@use '../util' as *;
+
+
+.body {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+
+	@include breakpoint-down(small) {
+		background-image: url(/app/asset/images/bg-mobile.png);
+		background-position: bottom;
+		background-size: cover;
+		background-repeat: no-repeat;
+		z-index: -4;
+
+		padding-block: 10rem;
+		padding-inline: 1rem;
+	}
+
+	@include breakpoint(medium) {
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+
+			width: 100%;
+			min-height: 50%;
+			
+			background-image: url(/app/asset/images/bg-desktop.png);
+			background-position: top;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: -4;	
+
+			padding-block: 0;
+			padding-inline: 0;
+		}
+
+		padding-block: 0;
+		padding-inline: 0;
+	}
+}
+
+.content {
+	display: grid;
+	grid-template-areas: 
+	 'menu'
+	 'report'
+	;
+	gap: 1.05rem;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0;
+	max-width: rem(810);
+	margin: auto rem(16);
+
+	list-style: none;
+
+	@include breakpoint(medium) {
+		grid-template-areas: 
+		 'menu report'
+		;
+		gap: 2rem;
+
+		margin: 0 auto;
+		padding: 0;
+	}
+}
+
+.footer {
+	@include breakpoint(medium) {
+		position: absolute;
+		bottom: rem(100);
+	}
+}

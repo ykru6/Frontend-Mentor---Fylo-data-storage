@@ -1,0 +1,24 @@
+@use '../globals/colors.scss' as clr;
+@use '../util/' as *;
+
+.footer__attribution { 
+    font-size: 1rem; 
+    text-align: center; 
+
+    
+    @at-root a { 
+      color: hsl(228, 45%, 44%); 
+      
+      transition: all 250ms;
+
+      &:hover {
+        color: clr(neutral, grayish-blue);
+      }
+    }
+  }
+
+@include breakpoint-down(small) {
+    .footer__attribution {
+        display: none;
+    }
+}

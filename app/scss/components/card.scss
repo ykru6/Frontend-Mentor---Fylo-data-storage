@@ -1,0 +1,124 @@
+@use '../globals/colors.scss' as clr;
+@use '../base' as *;
+@use '../util' as *;
+
+.content__card-fylo {
+    margin:  0;
+    padding: 2.75rem;
+
+    background-color: clr(neutral, dark-blue);
+    border-radius: 10px 100px 10px 10px;
+
+    @include breakpoint(medium) {
+        width: rem(323);
+    }
+
+    .card-fylo__logo {
+        margin-bottom: 1.9rem;
+    }
+
+    .card-fylo__menu {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: rem(12);
+
+        padding: 0;
+        margin: 0;
+
+        @at-root .menu__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: rem(55);
+            height: rem(55);
+
+            background-color: clr(neutral, darker-blue);
+            border-radius: 10px;
+
+            transition: all .2s;
+            
+            &:hover {
+                cursor: pointer;
+                background-color: clr.$lighter-blue;
+            }
+        }
+    }
+}
+
+.content__card-report {
+    position: relative;
+
+    margin: 0;
+    padding: 2rem;
+
+    background-color: clr(neutral, dark-blue);
+    border-radius: 10px;
+
+    text-align: center;
+
+    @include breakpoint(medium) {
+        align-self: flex-end;
+
+        text-align: left; 
+
+        width: rem(500);
+    }
+
+    .card-report__text {
+        font-size: rem(15);
+
+        margin-bottom: 1rem;
+
+        span {
+            font-weight: $f-bold;
+        }
+    }
+
+    .card-report__bg {
+        width: 100%;
+        height: rem(20);
+
+        background-color: clr(neutral, darker-blue);
+        border-radius: 50px;
+
+        margin-bottom: rem(7);
+        padding: rem(3.75);
+
+        .bg__info-bar {
+            width: 81.5%;
+            height: 100%;
+
+            background: linear-gradient(to right, clr(primary, salmon), clr(primary, light-pink));
+            border-radius: 5px;
+
+            padding: rem(1.75);
+
+            .info-bar__dot {
+                width: rem(8);
+                height: rem(8);
+
+                background-color: #fff;
+                border-radius: 50%;
+
+                margin-left: auto;
+            }
+        }
+    }
+
+    .card-report__amt {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:space-between;
+
+        margin-bottom: 1rem;
+
+        & > span {
+            font-size: rem(13);
+            font-weight: $f-bold;
+
+            text-transform: uppercase;
+        }
+    }
+}

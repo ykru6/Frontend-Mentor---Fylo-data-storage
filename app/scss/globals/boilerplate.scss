@@ -1,0 +1,22 @@
+@use '../util/' as *;
+
+html {
+	font-size: rem(14);
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+
+	background-color: clr(neutral, darker-blue);
+	color: clr(neutral, pale-blue);
+
+	margin: 0;
+	padding: 0;
+}
